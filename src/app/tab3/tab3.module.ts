@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { StatsPage } from '../features/stats/stats.page';
+import { HeaderComponent } from '../core/components/header/header.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { StatsPage } from '../features/stats/stats.page';
     ExploreContainerComponentModule,
     Tab3PageRoutingModule
   ],
-  declarations: [Tab3Page,StatsPage]
+  declarations: [Tab3Page,StatsPage,HeaderComponent]
 })
 export class Tab3PageModule {}
