@@ -1,0 +1,6 @@
+.form-control {
+  width: 25vw;
+  @media (min-width: 2px) and (max-width: 800px) {
+    width: 70vw;
+  }
+}

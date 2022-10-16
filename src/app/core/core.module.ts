@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HotToastModule } from '@ngneat/hot-toast';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     HttpClientModule,
-    HotToastModule.forRoot(),
-    BrowserAnimationsModule,
+    HotToastModule.forRoot()
   ],
-  exports: [CommonModule, BrowserAnimationsModule, HttpClientModule],
+  exports: [
+    CommonModule,
+    HttpClientModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true,
+    },
+  ]
 })
-export class CoreModule { }
+export class CoreModule {}

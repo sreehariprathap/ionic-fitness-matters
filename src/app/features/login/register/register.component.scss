@@ -1,0 +1,12 @@
+.input-group {
+  display: flex;
+  @media (min-width: 2px) and (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.form-control {
+  @media (min-width: 2px) and (max-width: 600px) {
+    width: 70vw;
+  }
+}

@@ -1,3 +1,99 @@
-<p>
-  register works!
-</p>
+<ion-content>
+  <div class="w-42 justify-center flex">
+    <img src="../../../../assets/Frame 1.svg" alt="" />
+  </div>
+  <form
+    [formGroup]="registerForm"
+    class="flex flex-col space-y-5 px-5 items-center mt-10"
+  >
+    <div class="form-control ">
+      <div class="flex input-group">
+        <ion-item>
+          <ion-label position="floating">First name</ion-label>
+          <ion-input
+            placeholder="Enter first name"
+            formControlName="firstName"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Last name</ion-label>
+          <ion-input
+            placeholder="Enter last name"
+            formControlName="lastName"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <ion-item>
+        <ion-label position="floating">Date of birth</ion-label>
+        <ion-input
+          type="date"
+          placeholder="Enter date of birth"
+          formControlName="dateOfBirth"
+        ></ion-input>
+      </ion-item>
+      <div class="flex input-group">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            placeholder="Enter email"
+            formControlName="email"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Phone</ion-label>
+          <ion-input
+            placeholder="Enter phone"
+            formControlName="phone"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="flex input-group">
+        <ion-item>
+          <ion-label position="floating">Height</ion-label>
+          <ion-input
+            placeholder="Enter height"
+            formControlName="height"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Weight</ion-label>
+          <ion-input
+            placeholder="Enter weight"
+            formControlName="weight"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="flex input-group">
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            placeholder="Enter password"
+            formControlName="password"
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Confirm password</ion-label>
+          <ion-input
+            placeholder="Confirm password"
+            formControlName="confirmPassword"
+          ></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <ion-button
+      (click)="register()"
+      [disabled]="!registerForm.valid && !registerForm.dirty"
+      >Register</ion-button
+    >
+    <div>
+      <p>
+        Already have an account ?
+        <span
+          ><a routerLink="/" class="text-pink-600 font-medium"
+            >Login now</a
+          ></span
+        >
+      </p>
+    </div>
+  </form>
+</ion-content>

@@ -1,3 +1,39 @@
-<p>
-  login works!
-</p>
+<ion-content>
+  <div class="w-42 justify-center flex">
+    <img src="../../../../assets/Frame 1.svg" alt="" />
+  </div>
+  <div class="flex justify-center">
+    <form
+      [formGroup]="loginForm"
+      class="flex flex-col px-5 items-center mt-10"
+    >
+      <div class="form-control">
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            placeholder="Enter email"
+            formControlName="email"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-control">
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input
+            type="password"
+            placeholder="Enter password"
+            formControlName="password"
+          ></ion-input>
+        </ion-item>
+      </div>
+      <ion-button
+        (click)="signIn()"
+        [disabled]="!loginForm.valid && !loginForm.dirty"
+        >Login</ion-button
+      >
+      <div>
+        <p>Dont have an account ? <span><a routerLink="./register" class=" text-pink-600 font-medium">Register now</a></span></p>
+      </div>
+    </form>
+  </div>
+</ion-content>
