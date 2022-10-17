@@ -1,5 +1,14 @@
+@tailwind base;
+@tailwind components;
+
 /* iOS places the subtitle above the title */
 ion-card-header.ios {
   display: flex;
   flex-flow: column-reverse;
+}
+.icon {
+  @apply w-5 h-5;
+}
+.avatar {
+  @apply w-48 h-48 rounded-full px-3 py-2;
 }
