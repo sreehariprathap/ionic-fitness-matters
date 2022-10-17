@@ -1,9 +1,35 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>user</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>
+      <div class="flex justify-between">
+        <ion-card-title>
+          {{userData.firstName}} {{userData.lastName}}
+        </ion-card-title>
+        <ion-card-title> {{fitnessData.age}} </ion-card-title>
+      </div>
+      <ion-card-subtitle>{{userData.email}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="flex items-center space-x-3">
+        <ion-icon name="body" class="w-4 h-4"></ion-icon> <br />
+        <span>Health</span></ion-card-title
+      >
+    </ion-card-header>
+    <ion-card-content class="flex justify-between">
+      <div>
+        <div class="flex space-x-2">
+          <ion-icon name="man"></ion-icon> <span>Height</span>
+        </div>
+        <span class="text-2xl text-slate-200"> {{fitnessData.height}}</span>
+      </div>
+      <div>
+        <div class="flex space-x-2">
+          <ion-icon name="man"></ion-icon> <span>Weight</span>
+        </div>
+        <span class="text-2xl text-slate-200"> {{fitnessData.weight}}</span>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
