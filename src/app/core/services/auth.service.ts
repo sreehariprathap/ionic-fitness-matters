@@ -18,6 +18,13 @@ export class AuthService {
   }
 
   logout() {
+    this.clearOfflineData();
     return of(true);
+  }
+
+  // Method to clear all offline data
+  clearOfflineData(): void {
+    window.localStorage.clear();
+    this.loggedInStatus = false;
   }
 }

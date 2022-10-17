@@ -12,3 +12,14 @@ ion-card-header.ios {
 .avatar {
   @apply w-48 h-48 rounded-full px-3 py-2;
 }
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+code {
+  white-space: pre-wrap;
+}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
-
+import { ActionSheetController } from '@ionic/angular';
 @Component({
   selector: 'app-user',
   templateUrl: './user.page.html',
@@ -9,7 +11,14 @@ import { UserService } from 'src/app/core/services/user.service';
 export class UserPage implements OnInit {
   userData: any;
   fitnessData: any;
-  constructor(private readonly userService: UserService) {}
+  result: string;
+
+  constructor(
+    private readonly userService: UserService,
+    private readonly auth: AuthService,
+    private readonly router: Router,
+    private actionSheetCtrl: ActionSheetController
+  ) {}
 
   ngOnInit() {
     this.getUserDetails();
@@ -20,7 +29,43 @@ export class UserPage implements OnInit {
     this.userService.getUserDetails({ id: +userId }).subscribe((data: any) => {
       this.userData = data.user;
       this.fitnessData = data.fitness;
-      console.log(this.userData,this.fitnessData);
     });
+  }
+
+  logout() {
+    this.auth.logout().subscribe((data: any) => {
+      this.router.navigate(['/']);
+    });
+  }
+
+  async presentActionSheet() {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Are you sure you want to logout',
+      buttons: [
+        {
+          text: 'Logout',
+          role: 'destructive',
+          data: {
+            action: 'delete',
+          },
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          data: {
+            action: 'cancel',
+          },
+        },
+      ],
+    });
+
+    await actionSheet.present();
+
+    const result = await actionSheet.onDidDismiss();
+    this.result = JSON.stringify(result, null, 2);
+    console.log(result);
+    if (result.data.action === 'delete') {
+      this.logout();
+    }
   }
 }
