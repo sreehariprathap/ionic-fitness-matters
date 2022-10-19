@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
       phone: ['', [Validators.required]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
+      gender: ['', [Validators.required]],
     });
   }
 
@@ -43,6 +44,7 @@ export class RegisterComponent implements OnInit {
     this.auth.signUp(this.registerForm.value).subscribe(
       (result: any) => {
         this.toastService.success('Registration successful, Please Login');
+        this.registerForm.reset();
         this.router.navigate(['/']);
       },
       (err) => {

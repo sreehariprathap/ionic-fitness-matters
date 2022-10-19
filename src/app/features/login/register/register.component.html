@@ -6,7 +6,7 @@
     [formGroup]="registerForm"
     class="flex flex-col space-y-5 px-5 items-center mt-10"
   >
-    <div class="form-control ">
+    <div class="form-control">
       <div class="flex input-group">
         <ion-item>
           <ion-label position="floating">First name</ion-label>
@@ -78,6 +78,17 @@
             formControlName="confirmPassword"
           ></ion-input>
         </ion-item>
+      </div>
+      <div>
+        <ion-list>
+          <ion-item>
+            <ion-select interface="action-sheet" formControlName="gender" placeholder="Gender">
+              <ion-select-option value="male">Male</ion-select-option>
+              <ion-select-option value="female">Female</ion-select-option>
+              <ion-select-option value="other">Other</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
       </div>
     </div>
     <ion-button

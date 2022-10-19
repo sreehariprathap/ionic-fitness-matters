@@ -13,7 +13,10 @@
         </ion-card-title>
         <ion-card-title> {{fitnessData.age}} </ion-card-title>
       </div>
-      <ion-card-subtitle>{{userData.email}}</ion-card-subtitle>
+      <div class="flex justify-between">
+        <ion-card-subtitle>{{userData.email}}</ion-card-subtitle>
+        <ion-card-subtitle>{{userData.gender}}</ion-card-subtitle>
+      </div>
     </ion-card-header>
   </ion-card>
   <ion-card *ngIf="userData && fitnessData">
@@ -99,7 +102,8 @@
     </ion-card-content>
   </ion-card>
   <div class="flex justify-center items-center p-3">
-    <ion-button color="danger" (click)="presentActionSheet()">Logout</ion-button>
-
+    <ion-button color="danger" (click)="presentActionSheet()"
+      >Logout</ion-button
+    >
   </div>
 </ion-content>
