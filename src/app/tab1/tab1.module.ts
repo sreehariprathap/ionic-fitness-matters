@@ -8,6 +8,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { HeaderComponent } from '../core/components/header/header.component';
 import { HomePage } from '../features/home/home.page';
+import { TodosComponent } from '../features/home/todos/todos.component';
+import { StatsComponent } from '../features/home/stats/stats.component';
 
 @NgModule({
   imports: [
@@ -20,6 +22,12 @@ import { HomePage } from '../features/home/home.page';
     ReactiveFormsModule,
   ],
   exports: [ReactiveFormsModule],
-  declarations: [Tab1Page, HeaderComponent, HomePage],
+  declarations: [
+    Tab1Page,
+    HeaderComponent,
+    HomePage,
+    TodosComponent,
+    StatsComponent,
+  ],
 })
 export class Tab1PageModule {}

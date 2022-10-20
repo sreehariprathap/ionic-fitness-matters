@@ -9,7 +9,9 @@ import { CalorieService } from 'src/app/core/services/calorie.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  @ViewChild(IonModal) modal: IonModal;
+  @ViewChild('foodModal') foodModal: IonModal;
+  @ViewChild('workoutModal') workoutModal: IonModal;
+  @ViewChild('waterModal') waterModal: IonModal;
   foodForm: FormGroup;
   userId: number = +localStorage.getItem('user_id');
   workoutForm: FormGroup;
@@ -33,6 +35,15 @@ export class HomePage implements OnInit {
     });
   }
 
+  addFood() {
+    console.log(this.foodForm.value);
+    this.calorieService.addFood(this.foodForm.value).subscribe((data) => {
+      console.log(data);
+      this.toast.success('food added successfully');
+      this.foodModal.dismiss();
+    });
+  }
+
   initWorkoutForm() {
     this.workoutForm = this.formBuilder.group({
       userId: this.userId,
@@ -41,31 +52,29 @@ export class HomePage implements OnInit {
     });
   }
 
-  addFood() {
-    console.log(this.foodForm.value);
-    this.calorieService.addFood(this.foodForm.value).subscribe((data) => {
-      console.log(data);
-      this.toast.success('food added successfully');
-      this.modal.dismiss();
-    });
-  }
-
   addWorkout() {
     console.log(this.workoutForm.value);
     this.calorieService.addWorkout(this.workoutForm.value).subscribe((data) => {
       console.log(data);
       this.toast.success('workout added successfully');
-      this.modal.dismiss();
+      this.workoutModal.dismiss();
     });
   }
 
   cancel() {
-    this.modal.dismiss(null, 'cancel');
+    this.foodModal.dismiss(null, 'cancel');
+    this.workoutModal.dismiss(null, 'cancel');
   }
 
   confirm() {
-    this.modal.dismiss(null, 'confirm');
+    this.foodModal.dismiss(null, 'confirm');
+    this.workoutModal.dismiss(null, 'confirm');
+    this.foodModal.dismiss(null, 'confirm');
   }
 
-  onWillDismiss(event: Event) {}
+  onWillDismiss(event: Event) {
+    console.log(event);
+    this.foodForm.reset();
+    this.workoutForm.reset();
+  }
 }

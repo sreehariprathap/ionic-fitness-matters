@@ -1,0 +1,24 @@
+<div *ngIf="todos">
+  <h2 class="text-3xl p-2 font-normal">Todos</h2>
+  <ion-card *ngFor="let item of todos | slice: 0:2; let i = index">
+    <ion-card-header>
+      <ion-card-title>todo {{ i + 1 }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="flex justify-between items-center">
+      <div>
+        {{ item.value }}
+      </div>
+      <div>
+        <ion-icon
+          *ngIf="item.status"
+          class="w-8 h-8"
+          name="checkmark-done-circle-outline"
+          (click)="markAsDone(item)"
+        ></ion-icon>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <div class="flex justify-end">
+    <a href="" class="text-end p-2">see all</a>
+  </div>
+</div>

@@ -7,17 +7,29 @@
       <ion-fab-button id="food-modal" expand="block"
         ><ion-icon name="fast-food"></ion-icon
       ></ion-fab-button>
-      <ion-fab-button id="water-modal" expand="block"
+      <!-- <ion-fab-button id="water-modal" expand="block"
         ><ion-icon name="water"></ion-icon
-      ></ion-fab-button>
+      ></ion-fab-button> -->
       <ion-fab-button id="workout-modal" expand="block"
         ><ion-icon name="bicycle"></ion-icon
       ></ion-fab-button>
     </ion-fab-list>
   </ion-fab>
+  <!-- todos  -->
+  <div>
+    <app-todos></app-todos>
+  </div>
+  <!-- quick info stats  -->
+  <div>
+    <app-stats></app-stats>
+  </div>
   <ion-content class="ion-padding">
     <!-- food intake modal  -->
-    <ion-modal trigger="food-modal" (willDismiss)="onWillDismiss($event)">
+    <ion-modal
+      #foodModal
+      trigger="food-modal"
+      (willDismiss)="onWillDismiss($event)"
+    >
       <ng-template>
         <ion-header>
           <ion-toolbar>
@@ -53,7 +65,11 @@
       </ng-template>
     </ion-modal>
     <!-- calorie burn modal  -->
-    <ion-modal trigger="workout-modal" (willDismiss)="onWillDismiss($event)">
+    <ion-modal
+      #workoutModal
+      trigger="workout-modal"
+      (willDismiss)="onWillDismiss($event)"
+    >
       <ng-template>
         <ion-header>
           <ion-toolbar>
@@ -91,7 +107,11 @@
       </ng-template>
     </ion-modal>
     <!-- water intake modal  -->
-    <ion-modal trigger="water-modal" (willDismiss)="onWillDismiss($event)">
+    <ion-modal
+      #waterModal
+      trigger="water-modal"
+      (willDismiss)="onWillDismiss($event)"
+    >
       <ng-template>
         <ion-header>
           <ion-toolbar>
