@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats.component.scss'],
 })
 export class StatsComponent implements OnInit {
-
+  calorieBurnPercent:number = 35
+  
   constructor() { }
 
   ngOnInit() {}

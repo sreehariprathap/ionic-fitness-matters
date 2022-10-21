@@ -1,3 +1,34 @@
 <div>
-  
+  <h2>Workout Tracker</h2>
+  <ion-card class="p-2">
+    <div class="flex justify-center">
+      <circle-progress
+        [percent]="calorieBurnPercent"
+        [radius]="60"
+        [space]="-10"
+        [toFixed]="1"
+        [maxPercent]="340"
+        [outerStrokeGradient]="true"
+        [outerStrokeWidth]="10"
+        [innerStrokeWidth]="8"
+        [innerStrokeColor]="'#ffff'"
+        [outerStrokeGradientStopColor]="'#53a9ff'"
+        [outerStrokeColor]="'#4882c2'"
+        [animation]="true"
+        [animateTitle]="false"
+        [showUnits]="false"
+        [showBackground]="false"
+        [responsive]="true"
+        [animationDuration]="1000"
+        [clockwise]="true"
+        [lazy]="true"
+        [title]="'Calories'"
+        [startFromZero]="false"
+        [showInnerStroke]="false"
+      ></circle-progress>
+    </div>
+    <ion-card-content>
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+  </ion-card>
 </div>

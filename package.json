@@ -29,6 +29,7 @@
     "@ngneat/overview": "^3.0.0",
     "daisyui": "^2.31.0",
     "ionicons": "^6.0.3",
+    "ng-circle-progress": "^1.6.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
