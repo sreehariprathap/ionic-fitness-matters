@@ -12,7 +12,15 @@ export class CalorieService {
     return this.http.post(`food/food-intake`, food);
   }
 
+  caloriesConsumedToday(params: any) {
+    return this.http.post(`food/calories/today`, params);
+  }
+
   addWorkout(workout: Workout) {
     return this.http.post(`workouts/add-workout`, workout);
+  }
+
+  caloriesBurnedToday(params: any) {
+    return this.http.post('workouts/calories/today', params);
   }
 }
