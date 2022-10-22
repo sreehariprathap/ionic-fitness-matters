@@ -9,7 +9,7 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./stats.component.scss'],
 })
 export class StatsComponent implements OnInit {
-  calorieBurnPercent = 0;
+  calorieBurnPercent: number;
   bmr: number;
   caloriesConsumed: number;
   caloriesBurned: number;
@@ -22,43 +22,28 @@ export class StatsComponent implements OnInit {
     this.calorieCounter();
   }
 
-  getUserDetails() {
-    const userId = localStorage.getItem('user_id');
-    this.userService
-      .getUserDetails({ id: +userId })
-      .subscribe((userData: any) => {
-        console.log(userData);
-        this.bmr = userData.fitness.caloriesPerDay;
-      });
-  }
-
-  getCaloriesBurned() {
-    const userId = localStorage.getItem('user_id');
-    this.calorieService
-      .caloriesBurnedToday({ id: +userId })
-      .subscribe((data: any) => {
-        console.log(data);
-        this.caloriesBurned = data.burnedCalories;
-      });
-  }
-
-  getCaloriesConsumed() {
+  calorieCounter() {
     const userId = localStorage.getItem('user_id');
     this.calorieService
       .caloriesConsumedToday({ id: +userId })
       .subscribe((data: any) => {
-        console.log(data);
         this.caloriesConsumed = data.consumedCalories;
       });
-  }
-
-  calorieCounter() {
-    this.getUserDetails();
-    this.getCaloriesBurned();
-    this.getCaloriesConsumed();
-    const caloriesBurned = +this.caloriesBurned + +this.bmr;
-    const caloriesConsumed = +this.caloriesConsumed;
-    this.calorieBurnPercent = (caloriesBurned / caloriesConsumed) * 100;
-    console.log(this.calorieBurnPercent);
+    this.calorieService
+      .caloriesBurnedToday({ id: +userId })
+      .subscribe((data: any) => {
+        this.caloriesBurned = data.burnedCalories;
+      });
+    this.userService
+      .getUserDetails({ id: +userId })
+      .subscribe((userData: any) => {
+        this.bmr = userData.fitness.caloriesPerDay;
+        //get calories percentage value
+        this.calorieBurnPercent = +(
+          (this.caloriesConsumed / (this.bmr + this.caloriesBurned)) *
+          100
+        ).toFixed(2);
+        console.log('calorieBurn percent', this.calorieBurnPercent);
+      });
   }
 }

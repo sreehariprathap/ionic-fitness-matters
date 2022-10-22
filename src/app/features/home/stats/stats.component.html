@@ -1,5 +1,5 @@
-<div>
-  <h2>Workout Tracker</h2>
+<div *ngIf="bmr">
+  <h2 class="text-3xl p-2 font-normal">Workout Tracker</h2>
   <ion-card class="p-2">
     <div class="flex justify-center">
       <circle-progress
@@ -21,14 +21,36 @@
         [responsive]="true"
         [animationDuration]="1000"
         [clockwise]="true"
-        [lazy]="true"
+        [lazy]="false"
         [title]="'Calories'"
+        [subtitle]="(calorieBurnPercent).toString()+' %'"
         [startFromZero]="false"
         [showInnerStroke]="false"
       ></circle-progress>
     </div>
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      <ion-grid>
+        <ion-row class="gap-x-3">
+          <ion-col>
+            <div>
+              <p>BMR</p>
+              <p class=" text-white text-xl">{{ bmr }}</p>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <p>Consumed</p>
+              <p class=" text-white text-xl">{{ caloriesConsumed }}</p>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <p>Burned</p>
+              <p class=" text-white text-xl">{{ caloriesBurned }}</p>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </div>

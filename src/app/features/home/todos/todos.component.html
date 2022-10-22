@@ -1,6 +1,6 @@
 <div *ngIf="todos">
   <h2 class="text-3xl p-2 font-normal">Todos</h2>
-  <ion-card *ngFor="let item of todos | slice: 0:2; let i = index">
+  <ion-card *ngFor="let item of todos | slice: 0:3; let i = index">
     <ion-card-header>
       <ion-card-title>todo {{ i + 1 }}</ion-card-title>
     </ion-card-header>
