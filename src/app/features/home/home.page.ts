@@ -20,10 +20,10 @@ export class HomePage implements OnInit {
   workoutForm: FormGroup;
   todoForm: FormGroup;
 
-  clickSubject: Subject<any> = new Subject();
-  notifyClick() {
-    this.clickSubject.next(1);
-  }
+  todoSubject: Subject<any> = new Subject();
+  workoutSubject: Subject<any> = new Subject();
+  foodSubject: Subject<any> = new Subject();
+
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
   constructor(
@@ -52,7 +52,7 @@ export class HomePage implements OnInit {
       console.log(data);
       this.toast.success('food added successfully');
       this.foodModal.dismiss();
-      window.location.reload();
+      this.foodSubject.next(1);
     });
   }
 
@@ -78,7 +78,7 @@ export class HomePage implements OnInit {
     this.todoService.addTodo(this.todoForm.value).subscribe((data) => {
       this.toast.success('todo added successfully');
       this.todoModal.dismiss();
-      this.clickSubject.next(1);
+      this.todoSubject.next(1);
     });
   }
 
@@ -86,6 +86,7 @@ export class HomePage implements OnInit {
     this.calorieService.addWorkout(this.workoutForm.value).subscribe((data) => {
       this.toast.success('workout added successfully');
       this.workoutModal.dismiss();
+      this.workoutSubject.next(1);
     });
   }
 

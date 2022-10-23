@@ -8,14 +8,14 @@ import { TodoService } from 'src/app/core/services/todo.service';
   styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent implements OnInit {
-  @Input('clickSubject') clickSubject: Subject<any>;
+  @Input('todoSubject') todoSubject: Subject<any>;
   todos: any[];
 
   constructor(private readonly todoService: TodoService) {}
 
   ngOnInit() {
     this.getTodosForToday();
-    this.clickSubject.subscribe((e) => {
+    this.todoSubject.subscribe((e) => {
       this.getTodosForToday();
     });
   }

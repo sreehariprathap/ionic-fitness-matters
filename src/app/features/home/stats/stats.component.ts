@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { skip } from 'rxjs/operators';
 import { CalorieService } from 'src/app/core/services/calorie.service';
 import { UserService } from 'src/app/core/services/user.service';
@@ -9,10 +10,13 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./stats.component.scss'],
 })
 export class StatsComponent implements OnInit {
+  @Input('foodSubject') foodSubject: Subject<any>;
+  @Input('workoutSubject') workoutSubject: Subject<any>;
   calorieBurnPercent: number;
   bmr: number;
   caloriesConsumed: number;
   caloriesBurned: number;
+
   constructor(
     private readonly calorieService: CalorieService,
     private readonly userService: UserService
@@ -20,6 +24,12 @@ export class StatsComponent implements OnInit {
 
   ngOnInit() {
     this.calorieCounter();
+    this.workoutSubject.subscribe((e) => {
+      this.calorieCounter();
+    });
+    this.foodSubject.subscribe((e) => {
+      this.calorieCounter();
+    });
   }
 
   calorieCounter() {
@@ -40,7 +50,7 @@ export class StatsComponent implements OnInit {
         this.bmr = +userData.fitness.caloriesPerDay;
         //get calories percentage value
         this.calorieBurnPercent = +(
-          (this.caloriesConsumed / ((this.bmr) + (this.caloriesBurned))) *
+          (this.caloriesConsumed / (this.bmr + this.caloriesBurned)) *
           100
         ).toFixed(2);
         console.log('calorieBurn percent', this.calorieBurnPercent);

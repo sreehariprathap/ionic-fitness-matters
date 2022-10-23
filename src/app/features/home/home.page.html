@@ -7,9 +7,6 @@
       <ion-fab-button id="food-modal" expand="block"
         ><ion-icon name="fast-food"></ion-icon
       ></ion-fab-button>
-      <ion-fab-button (click)="changeValue()"
-        ><ion-icon name="fast-food"></ion-icon
-      ></ion-fab-button>
       <!-- <ion-fab-button id="water-modal" expand="block"
         ><ion-icon name="water"></ion-icon
       ></ion-fab-button> -->
@@ -24,12 +21,11 @@
   <div class="">
     <!-- todos  -->
     <div>
-      <app-stats></app-stats>
+      <app-stats [workoutSubject]="workoutSubject" [foodSubject]="foodSubject"></app-stats>
     </div>
     <!-- quick info stats  -->
     <div>
-      <button type="button" (click)="notifyClick()">Click Me</button>
-      <app-todos [clickSubject]="clickSubject"></app-todos>
+      <app-todos [todoSubject]="todoSubject"></app-todos>
     </div>
   </div>
   <ion-content class="ion-padding">
