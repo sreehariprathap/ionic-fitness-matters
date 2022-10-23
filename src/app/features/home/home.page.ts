@@ -10,7 +10,7 @@ import { TodoService } from 'src/app/core/services/todo.service';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit  {
+export class HomePage implements OnInit {
   @ViewChild('foodModal') foodModal: IonModal;
   @ViewChild('workoutModal') workoutModal: IonModal;
   @ViewChild('todoModal') todoModal: IonModal;
@@ -19,8 +19,13 @@ export class HomePage implements OnInit  {
   userId: number = +localStorage.getItem('user_id');
   workoutForm: FormGroup;
   todoForm: FormGroup;
-  currentItem = 'Television';
 
+  clickSubject: Subject<any> = new Subject();
+  notifyClick() {
+    this.clickSubject.next(1);
+  }
+
+  // eslint-disable-next-line @typescript-eslint/member-ordering
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly calorieService: CalorieService,
@@ -32,10 +37,6 @@ export class HomePage implements OnInit  {
     this.initFoodIntakeForm();
     this.initWorkoutForm();
     this.initAddTodoForm();
-  }
-
-  changeValue() {
-    this.currentItem = 'superman';
   }
 
   initFoodIntakeForm() {
@@ -77,6 +78,7 @@ export class HomePage implements OnInit  {
     this.todoService.addTodo(this.todoForm.value).subscribe((data) => {
       this.toast.success('todo added successfully');
       this.todoModal.dismiss();
+      this.clickSubject.next(1);
     });
   }
 

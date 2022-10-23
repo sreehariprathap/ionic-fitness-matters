@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { TodoService } from 'src/app/core/services/todo.service';
 
 @Component({
@@ -7,16 +8,17 @@ import { TodoService } from 'src/app/core/services/todo.service';
   styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent implements OnInit {
-  @Input() item = ''; // decorate the property with @Input()
+  @Input('clickSubject') clickSubject: Subject<any>;
   todos: any[];
 
   constructor(private readonly todoService: TodoService) {}
 
   ngOnInit() {
     this.getTodosForToday();
+    this.clickSubject.subscribe((e) => {
+      this.getTodosForToday();
+    });
   }
-
-
 
   getTodosForToday() {
     const userId = localStorage.getItem('user_id');

@@ -1,5 +1,4 @@
 <div *ngIf="todos">
-  <h2>{{ item }}</h2>
   <h2 class="text-3xl p-2 font-normal">Todos</h2>
   <h2 class="p-5" *ngIf="!todos.length">No todos for today</h2>
   <ion-card *ngFor="let item of todos | slice: 0:3; let i = index">

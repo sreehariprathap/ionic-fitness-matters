@@ -28,7 +28,8 @@
     </div>
     <!-- quick info stats  -->
     <div>
-      <app-todos [item]="currentItem"></app-todos>
+      <button type="button" (click)="notifyClick()">Click Me</button>
+      <app-todos [clickSubject]="clickSubject"></app-todos>
     </div>
   </div>
   <ion-content class="ion-padding">
