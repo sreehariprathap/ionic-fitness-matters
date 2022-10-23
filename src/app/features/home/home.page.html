@@ -7,27 +7,30 @@
       <ion-fab-button id="food-modal" expand="block"
         ><ion-icon name="fast-food"></ion-icon
       ></ion-fab-button>
+      <ion-fab-button (click)="changeValue()"
+        ><ion-icon name="fast-food"></ion-icon
+      ></ion-fab-button>
       <!-- <ion-fab-button id="water-modal" expand="block"
         ><ion-icon name="water"></ion-icon
       ></ion-fab-button> -->
       <ion-fab-button id="workout-modal" expand="block"
         ><ion-icon name="bicycle"></ion-icon
       ></ion-fab-button>
-      <ion-fab-button id="water-modal" expand="block"
+      <ion-fab-button id="todo-modal" expand="block"
         ><ion-icon name="add-outline"></ion-icon
       ></ion-fab-button>
     </ion-fab-list>
   </ion-fab>
-<div class=" xl:flex">
+  <div class="">
     <!-- todos  -->
     <div>
       <app-stats></app-stats>
     </div>
     <!-- quick info stats  -->
     <div>
-      <app-todos></app-todos>
+      <app-todos [item]="currentItem"></app-todos>
     </div>
-</div>
+  </div>
   <ion-content class="ion-padding">
     <!-- food intake modal  -->
     <ion-modal
@@ -83,26 +86,33 @@
             </ion-buttons>
             <ion-title class="text-center">Add Todo</ion-title>
             <ion-buttons slot="end">
-              <ion-button (click)="addFood()" [strong]="true">Add</ion-button>
+              <ion-button (click)="addTodo()" [strong]="true">Add</ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
-          <form [formGroup]="foodForm">
+          <form [formGroup]="todoForm">
             <ion-item>
-              <ion-label position="floating">Food</ion-label>
+              <ion-label position="floating">title</ion-label>
               <ion-input
                 type="text"
-                placeholder="Enter food name"
-                formControlName="foodIntake"
+                placeholder="Enter title"
+                formControlName="title"
               ></ion-input>
             </ion-item>
             <ion-item>
-              <ion-label position="floating">Calories</ion-label>
+              <ion-label position="floating">Description</ion-label>
+              <ion-textarea
+                placeholder="Enter description"
+                formControlName="description"
+              ></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Date of todo</ion-label>
               <ion-input
-                type="text"
-                placeholder="Enter calories"
-                formControlName="calories"
+                type="date"
+                placeholder="Enter date"
+                formControlName="date"
               ></ion-input>
             </ion-item>
           </form>

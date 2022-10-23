@@ -27,20 +27,20 @@ export class StatsComponent implements OnInit {
     this.calorieService
       .caloriesConsumedToday({ id: +userId })
       .subscribe((data: any) => {
-        this.caloriesConsumed = data.consumedCalories;
+        this.caloriesConsumed = +data.consumedCalories;
       });
     this.calorieService
       .caloriesBurnedToday({ id: +userId })
       .subscribe((data: any) => {
-        this.caloriesBurned = data.burnedCalories;
+        this.caloriesBurned = +data.burnedCalories;
       });
     this.userService
       .getUserDetails({ id: +userId })
       .subscribe((userData: any) => {
-        this.bmr = userData.fitness.caloriesPerDay;
+        this.bmr = +userData.fitness.caloriesPerDay;
         //get calories percentage value
         this.calorieBurnPercent = +(
-          (this.caloriesConsumed / (this.bmr + this.caloriesBurned)) *
+          (this.caloriesConsumed / ((this.bmr) + (this.caloriesBurned))) *
           100
         ).toFixed(2);
         console.log('calorieBurn percent', this.calorieBurnPercent);

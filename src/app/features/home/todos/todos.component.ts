@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TodoService } from 'src/app/core/services/todo.service';
 
 @Component({
   selector: 'app-todos',
@@ -6,28 +7,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todos.component.scss'],
 })
 export class TodosComponent implements OnInit {
-  todos = [
-    {
-      id: 1,
-      value: 'Workout from 6PM-8PM',
-      status: true,
-    },
-    {
-      id: 2,
-      value: 'Study from 9PM',
-      status: true,
-    },
-    {
-      id: 3,
-      value: 'eat an egg as dinner',
-      status: true,
-    },
-  ];
-  constructor() {}
+  @Input() item = ''; // decorate the property with @Input()
+  todos: any[];
 
-  ngOnInit() {}
+  constructor(private readonly todoService: TodoService) {}
 
-  markAsDone(item) {
-    item.status = !item.status;
+  ngOnInit() {
+    this.getTodosForToday();
+  }
+
+
+
+  getTodosForToday() {
+    const userId = localStorage.getItem('user_id');
+    this.todoService
+      .getTodosForToday({ id: +userId })
+      .subscribe((data: any) => {
+        this.todos = data.todasTodos.filter((datum) => datum.status);
+      });
+  }
+
+  markAsDone(id: number) {
+    this.todoService.markAsDone({ id: +id }).subscribe((data: any) => {
+      this.getTodosForToday();
+    });
   }
 }
