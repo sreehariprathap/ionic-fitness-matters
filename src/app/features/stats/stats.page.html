@@ -1,9 +1,38 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>stats</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <h2 class="text-3xl p-2 font-normal">Statistics</h2>
+  <!-- add button  -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" id="open-modal" expand="block">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <!-- modal  -->
+  <!-- modal  -->
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="cancel()">Cancel</ion-button>
+          </ion-buttons>
+          <ion-title class="text-center">Add goal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="addWeight()" [strong]="true">Confirm</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <form [formGroup]="weightTrackerForm">
+          <ion-item>
+            <ion-label position="floating">Weight</ion-label>
+            <ion-input
+              type="number"
+              placeholder="Enter weight"
+              formControlName="weight"
+            ></ion-input>
+          </ion-item>
+        </form>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>

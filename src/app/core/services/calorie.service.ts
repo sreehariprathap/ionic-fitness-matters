@@ -23,4 +23,12 @@ export class CalorieService {
   caloriesBurnedToday(params: any) {
     return this.http.post('workouts/calories/today', params);
   }
+
+  addWeight(params: any) {
+    return this.http.post(`workouts/weight`, params);
+  }
+
+  getWeightHistory(params: any) {
+    return this.http.post(`workouts/weight-history`, params);
+  }
 }
