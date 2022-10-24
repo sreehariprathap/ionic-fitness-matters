@@ -8,18 +8,30 @@
   </ion-fab>
   <!-- goals cards  -->
   <div>
-    <ion-card>
+    <ion-card *ngFor="let goal of goals | slice: 0:3; let i = index">
       <ion-card-header>
-        <ion-card-title></ion-card-title>
-        <ion-card-subtitle></ion-card-subtitle>
+        <ion-card-title>{{goal.title}}</ion-card-title>
+        <ion-card-subtitle>{{goal.year}}</ion-card-subtitle>
       </ion-card-header>
 
-      <ion-card-content> </ion-card-content>
+      <ion-card-content>{{goal.description}} </ion-card-content>
+      <ion-item>
+        <ion-select
+          interface="action-sheet"
+          placeholder="Select fruit"
+          (ionChange)="changeStatus($event,goal.id)"
+          value="{{goal.status}}"
+        >
+          <ion-select-option value="Not started">Not started</ion-select-option>
+          <ion-select-option value="In progress">In progress</ion-select-option>
+          <ion-select-option value="Done">Done</ion-select-option>
+        </ion-select>
+      </ion-item>
     </ion-card>
   </div>
 
   <!-- modal  -->
-  <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+  <ion-modal trigger="open-modal">
     <ng-template>
       <ion-header>
         <ion-toolbar>
@@ -28,19 +40,36 @@
           </ion-buttons>
           <ion-title class="text-center">Add goal</ion-title>
           <ion-buttons slot="end">
-            <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            <ion-button (click)="addGoal()" [strong]="true">Confirm</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
-        <ion-item>
-          <ion-label position="stacked">Enter your name</ion-label>
-          <ion-input
-            type="text"
-            placeholder="Your name"
-            [(ngModel)]="name"
-          ></ion-input>
-        </ion-item>
+        <form [formGroup]="goalForm">
+          <ion-item>
+            <ion-label position="floating">title</ion-label>
+            <ion-input
+              type="text"
+              placeholder="Enter title"
+              formControlName="title"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Description</ion-label>
+            <ion-textarea
+              placeholder="Enter description"
+              formControlName="description"
+            ></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Year</ion-label>
+            <ion-input
+              type="month"
+              placeholder="Enter date"
+              formControlName="year"
+            ></ion-input>
+          </ion-item>
+        </form>
       </ion-content>
     </ng-template>
   </ion-modal>

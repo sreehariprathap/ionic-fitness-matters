@@ -5,28 +5,50 @@ import {
   HttpEvent,
   HttpInterceptor,
 } from '@angular/common/http';
-import {  Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { throwError as observableThrowError } from 'rxjs';
 import { HotToastService } from '@ngneat/hot-toast';
 import { environment } from 'src/environments/environment';
+import { finalize } from 'rxjs/operators';
+import { LoaderService } from '../services/loader.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private toastService: HotToastService) {}
+  private totalRequests = 0;
+
+  constructor(
+    private toastService: HotToastService,
+    private loadingService: LoaderService
+  ) {}
 
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
+    console.log('caught');
+    this.totalRequests++;
+    this.loadingService.setLoading(true);
+
     const accessToken = localStorage.getItem('access_token');
     let apiReq = request.clone({
       url: `${environment.baseUrl}/${request.url}`,
     });
-    apiReq = apiReq.clone({ headers: apiReq.headers.set('Accept', 'application/json') });
-    if(accessToken){
-      apiReq = apiReq.clone({ headers: apiReq.headers.set('authorization', `Bearer ${accessToken}`) });
+    apiReq = apiReq.clone({
+      headers: apiReq.headers.set('Accept', 'application/json'),
+    });
+    if (accessToken) {
+      apiReq = apiReq.clone({
+        headers: apiReq.headers.set('authorization', `Bearer ${accessToken}`),
+      });
     }
-    return next.handle(apiReq);
+    return next.handle(apiReq).pipe(
+      finalize(() => {
+        this.totalRequests--;
+        if (this.totalRequests === 0) {
+          this.loadingService.setLoading(false);
+        }
+      })
+    );
   }
 
   private getFullUrl(url: string): string {
