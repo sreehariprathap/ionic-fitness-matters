@@ -13,7 +13,6 @@ export class StatsPage implements OnInit {
   @ViewChild(IonModal) modal: IonModal;
   weightTrackerForm: FormGroup;
   userId: number = +localStorage.getItem('user_id');
-  weightHistory: any[];
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -22,7 +21,6 @@ export class StatsPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getWeightHistory();
     this.initWeightTrackerForm();
   }
 
@@ -39,15 +37,6 @@ export class StatsPage implements OnInit {
       .subscribe((data) => {
         this.toast.success('weight added successfully');
         this.modal.dismiss();
-        this.getWeightHistory();
-      });
-  }
-
-  getWeightHistory() {
-    this.calorieService
-      .getWeightHistory({ id: this.userId })
-      .subscribe((data: any) => {
-        this.weightHistory = data.weights;
       });
   }
 
