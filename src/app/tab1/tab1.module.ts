@@ -11,7 +11,7 @@ import { HomePage } from '../features/home/home.page';
 import { TodosComponent } from '../features/home/todos/todos.component';
 import { StatsComponent } from '../features/home/stats/stats.component';
 
-import { NgCircleProgressModule } from 'ng-circle-progress';
+// import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   imports: [
@@ -23,7 +23,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     FormsModule,
     ReactiveFormsModule,
     // Specify ng-circle-progress as an import
-    NgCircleProgressModule.forRoot(),
+    // NgCircleProgressModule.forRoot(),
   ],
   exports: [ReactiveFormsModule],
   declarations: [
