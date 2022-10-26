@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('user_id', data.userId);
       this.auth.loggedInStatus = true;
       this.toast.success('login successful');
-      this.router.navigate(['/dashboard/tabs/tab1']);
+      this.router.navigate(['/dashboard/tabs/home']);
     });
   }
 }

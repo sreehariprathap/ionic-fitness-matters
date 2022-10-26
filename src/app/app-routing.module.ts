@@ -28,10 +28,6 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./features/user/user.module').then( m => m.UserPageModule)
   },
-  {
-    path: 'tab4',
-    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
-  },
 ];
 @NgModule({
   imports: [

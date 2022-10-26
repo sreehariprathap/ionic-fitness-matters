@@ -1,12 +1,16 @@
+<app-header></app-header>
 <ion-content>
-  <h2 class="text-3xl p-2 font-normal">Goals</h2>
+  <h2 class="text-3xl p-2 font-normal">Daily goals</h2>
   <!-- add button  -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="danger" id="open-modal" expand="block">
+    <ion-fab-button color="danger" id="goal-modal" expand="block">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <!-- daily goals  -->
+  <app-daily-goals></app-daily-goals>
   <!-- goals cards  -->
+  <h2 class="text-3xl p-2 font-normal">Goals</h2>
   <div>
     <ion-card *ngFor="let goal of goals | slice: 0:3; let i = index">
       <ion-card-header>
@@ -31,7 +35,7 @@
   </div>
 
   <!-- modal  -->
-  <ion-modal trigger="open-modal">
+  <ion-modal trigger="goal-modal">
     <ng-template>
       <ion-header>
         <ion-toolbar>

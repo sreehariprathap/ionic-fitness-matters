@@ -1,3 +1,4 @@
+<app-header></app-header>
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="danger">
@@ -21,11 +22,18 @@
   <div class="">
     <!-- todos  -->
     <div>
-      <app-stats [workoutSubject]="workoutSubject" [foodSubject]="foodSubject"></app-stats>
+      <app-stats
+        [workoutSubject]="workoutSubject"
+        [foodSubject]="foodSubject"
+      ></app-stats>
     </div>
     <!-- quick info stats  -->
     <div>
       <app-todos [todoSubject]="todoSubject"></app-todos>
+    </div>
+    <!-- tools  -->
+    <div>
+      <app-tools></app-tools>
     </div>
   </div>
   <ion-content class="ion-padding">

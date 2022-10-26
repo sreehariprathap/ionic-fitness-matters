@@ -15,7 +15,7 @@ export class WeightTrackerComponent implements OnInit {
   dataAxis = [];
   data = [];
   yMax;
-  weight: number = 0;
+  weight = 0;
 
   constructor(private readonly calorieService: CalorieService) {
     this.getWeightHistory();

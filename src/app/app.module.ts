@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpinnerComponent } from './core/components/spinner/spinner.component';
 import { CoreModule } from './core/core.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent, SpinnerComponent],
@@ -16,7 +17,8 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    FontAwesomeModule
   ],
   exports: [ CoreModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
