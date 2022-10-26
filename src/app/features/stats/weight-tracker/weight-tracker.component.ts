@@ -108,7 +108,6 @@ export class WeightTrackerComponent implements OnInit {
           this.dataAxis.push(element.date);
           this.data.push(element.weight);
           this.yMax = Math.max(...this.data) + 10;
-          console.log(this.yMax);
         });
       });
   }
