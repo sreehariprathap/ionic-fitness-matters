@@ -16,7 +16,9 @@
           </ion-buttons>
           <ion-title class="text-center">Add goal</ion-title>
           <ion-buttons slot="end">
-            <ion-button (click)="addWeight()" [strong]="true">Confirm</ion-button>
+            <ion-button (click)="addWeight()" [strong]="true"
+              >Confirm</ion-button
+            >
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
@@ -35,5 +37,10 @@
     </ng-template>
   </ion-modal>
   <!-- content -->
-  <app-weight-tracker ></app-weight-tracker>
+  <div>
+    <app-weight-tracker></app-weight-tracker>
+  </div>
+  <div>
+    <app-workout-heatmap></app-workout-heatmap>
+  </div>
 </ion-content>

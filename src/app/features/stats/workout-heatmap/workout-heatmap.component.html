@@ -1,3 +1,12 @@
-<p>
-  workout-heatmap works!
-</p>
+<h2 class="text-3xl p-2 font-normal">Workout HeatMap</h2>
+<div class="p-2">
+  <ejs-heatmap
+    id="container"
+    [cellSettings]='cellSettings'
+    [dataSource]="dataSource"
+    [xAxis]="xAxis"
+    [yAxis]="yAxis"
+    [paletteSettings]="paletteSettings"
+  >
+  </ejs-heatmap>
+</div>

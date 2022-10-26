@@ -11,6 +11,13 @@ import { ExploreContainerComponentModule } from 'src/app/explore-container/explo
 import { NgxEchartsModule } from 'ngx-echarts';
 import { HeaderComponent } from 'src/app/core/components/header/header.component';
 import { WeightTrackerComponent } from './weight-tracker/weight-tracker.component';
+import { HeatMapModule } from '@syncfusion/ej2-angular-heatmap';
+import { WorkoutHeatmapComponent } from './workout-heatmap/workout-heatmap.component';
+import {
+  HeatMapComponent,
+  LegendService,
+  TooltipService,
+} from '@syncfusion/ej2-angular-heatmap';
 
 @NgModule({
   imports: [
@@ -20,6 +27,7 @@ import { WeightTrackerComponent } from './weight-tracker/weight-tracker.componen
     ExploreContainerComponentModule,
     StatsPageRoutingModule,
     ReactiveFormsModule,
+    HeatMapModule,
     NgxEchartsModule.forRoot({
       /**
        * This will import all modules from echarts.
@@ -30,6 +38,12 @@ import { WeightTrackerComponent } from './weight-tracker/weight-tracker.componen
     }),
   ],
   exports: [ReactiveFormsModule],
-  declarations: [StatsPage, HeaderComponent, WeightTrackerComponent],
+  declarations: [
+    StatsPage,
+    HeaderComponent,
+    WeightTrackerComponent,
+    WorkoutHeatmapComponent
+  ],
+  providers: [HeatMapComponent, LegendService, TooltipService],
 })
 export class StatsPageModule {}

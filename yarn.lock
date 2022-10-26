@@ -1410,40 +1410,40 @@
 
 "@fortawesome/angular-fontawesome@0.11.1":
   version "0.11.1"
-  resolved "https://registry.yarnpkg.com/@fortawesome/angular-fontawesome/-/angular-fontawesome-0.11.1.tgz#f55789b1229bc6ff53816050689f361041e42c6a"
+  resolved "https://registry.npmjs.org/@fortawesome/angular-fontawesome/-/angular-fontawesome-0.11.1.tgz"
   integrity sha512-Ngzm5MVxk76ZhYpPTNOI/mpYNz9bzwfBXC5L9mktLgOONjBuYBPVt+bH8lny8hNtDk0ppZzXsMN6CO7hckdfnw==
   dependencies:
     tslib "^2.4.0"
 
 "@fortawesome/fontawesome-common-types@6.2.0":
   version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.2.0.tgz#76467a94aa888aeb22aafa43eb6ff889df3a5a7f"
+  resolved "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.2.0.tgz"
   integrity sha512-rBevIsj2nclStJ7AxTdfsa3ovHb1H+qApwrxcTVo+NNdeJiB9V75hsKfrkG5AwNcRUNxrPPiScGYCNmLMoh8pg==
 
 "@fortawesome/fontawesome-svg-core@^6.1.1":
   version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.2.0.tgz#11856eaf4dd1d865c442ddea1eed8ee855186ba2"
+  resolved "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.2.0.tgz"
   integrity sha512-Cf2mAAeMWFMzpLC7Y9H1I4o3wEU+XovVJhTiNG8ZNgSQj53yl7OCJaS80K4YjrABWZzbAHVaoHE1dVJ27AAYXw==
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.2.0"
 
 "@fortawesome/free-brands-svg-icons@^6.1.1":
   version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-6.2.0.tgz#ce072179677f9b5d6767f918cfbf296f357cc1d0"
+  resolved "https://registry.npmjs.org/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-6.2.0.tgz"
   integrity sha512-fm1y4NyZ2qKYNmYhdMz9VAWRw1Et7PMHNunSw3W0SVAwKwv6o0qiJworLH3Y9SnmhHzAymXJwCX1op22FFvGiA==
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.2.0"
 
 "@fortawesome/free-regular-svg-icons@^6.1.1":
   version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-6.2.0.tgz#947e1f03be17da3a60bfeb2666b5348b19448ce2"
+  resolved "https://registry.npmjs.org/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-6.2.0.tgz"
   integrity sha512-M1dG+PAmkYMTL9BSUHFXY5oaHwBYfHCPhbJ8qj8JELsc9XCrUJ6eEHWip4q0tE+h9C0DVyFkwIM9t7QYyCpprQ==
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.2.0"
 
 "@fortawesome/free-solid-svg-icons@^6.1.1":
   version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.2.0.tgz#8dcde48109354fd7a5ece8ea48d678bb91d4b5f0"
+  resolved "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.2.0.tgz"
   integrity sha512-UjCILHIQ4I8cN46EiQn0CZL/h8AwCGgR//1c4R96Q5viSRwuKVo0NdQEc4bm+69ZwC0dUvjbDqAHF1RR5FA3XA==
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.2.0"
@@ -1832,6 +1832,85 @@
   version "2.16.1"
   resolved "https://registry.npmjs.org/@stencil/core/-/core-2.16.1.tgz"
   integrity sha512-s/UJp9qxExL3DyQPT70kiuWeb3AdjbUZM+5lEIXn30I2DLcLYPOPXfsoWJODieQywq+3vPiLZeIdkoqjf6jcSw==
+
+"@syncfusion/ej2-angular-base@~19.4.52":
+  version "19.4.56"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-angular-base/-/ej2-angular-base-19.4.56.tgz#7d1a97dba60d9f5bdd70462c305cf63084d549dc"
+  integrity sha512-icByIqUj5YGj0iUcElXPBss4bosmgIimA87JLvsu/JKWtMWUCur95b2GmXidRqr8ePIdRbudZhwOPlcIei2x0w==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.52"
+    "@syncfusion/ej2-icons" "~19.4.52"
+    core-js "^3.4.8"
+    reflect-metadata "^0.1.9"
+    rxjs "^6.5.4"
+    rxjs-compat "^6.5.4"
+    zone.js "^0.10.2"
+
+"@syncfusion/ej2-angular-heatmap@19":
+  version "19.4.52"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-angular-heatmap/-/ej2-angular-heatmap-19.4.52.tgz#54b41e2ed31c9874eaa1121a4601f48ea014ca6e"
+  integrity sha512-6UeD5ettdiXonOxOkiQrLHr5ruIa1T4rIjVacfisVHIYg01cAs32IBZR3AJc2T7PKzYjeztHADYkR71u8qEaIg==
+  dependencies:
+    "@syncfusion/ej2-angular-base" "~19.4.52"
+    "@syncfusion/ej2-base" "~19.4.52"
+    "@syncfusion/ej2-heatmap" "19.4.52"
+
+"@syncfusion/ej2-base@~19.4.52":
+  version "19.4.52"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-base/-/ej2-base-19.4.52.tgz#9fa0d3de351a82c99f423491f64d09c40fdea520"
+  integrity sha512-BMJGjscgl5CGpWQW1y1osv+rcKBPYgPBpSfz8FA0XcqhL6wNjGomALmxHznk7QGWC/4bdUhx6AKsGHutMGm/PA==
+  dependencies:
+    "@syncfusion/ej2-icons" "~19.4.52"
+
+"@syncfusion/ej2-compression@~19.4.52":
+  version "19.4.52"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-compression/-/ej2-compression-19.4.52.tgz#bb8c077ed80c2cfc47cabd040ed359f5e512d9ae"
+  integrity sha512-6LBkM8cSfhiRVmbHpAs5uYLCOFS8XzYwui2qlIav66eWYIeQXs9KWvA5/Ppy3wtwy2pSXAnV9s1QDM1bBxv6TQ==
+  dependencies:
+    "@syncfusion/ej2-file-utils" "~19.4.52"
+
+"@syncfusion/ej2-data@~19.4.52":
+  version "19.4.54"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-data/-/ej2-data-19.4.54.tgz#d6d02b113898ac5d2683270986adf49c08100f3d"
+  integrity sha512-btJDjKepcaVGtNqVoblhYFhx4sAW1ju+Nq1CBPn4kO0AtRPBQ3Gi47uQgsstkxNMDrv+UG1hNi7PhHpPNOtwUQ==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.52"
+
+"@syncfusion/ej2-file-utils@~19.4.52":
+  version "19.4.52"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-file-utils/-/ej2-file-utils-19.4.52.tgz#462c81d727909c57feceaac06889fa906d0ecbac"
+  integrity sha512-4rMjft6arAaRVAbmsUxSRqpMlJ7azUAlVr5SNSJFNynJpsNK6CtXE4Pr7EQ7VfOnK8XhNskpSbcik5P2vm8Pdg==
+
+"@syncfusion/ej2-heatmap@19.4.52":
+  version "19.4.52"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-heatmap/-/ej2-heatmap-19.4.52.tgz#bc8c54cb3ada7cb9407cb94421eb435dd190f480"
+  integrity sha512-wbxneQvncRRw8tyA57qf0bWSX+YvVL/VTBq19DT9sbpTrYIpg9dgT1FnzQzkESaD/cXcsOHFfJxgr+rJQJd86Q==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.52"
+    "@syncfusion/ej2-compression" "~19.4.52"
+    "@syncfusion/ej2-data" "~19.4.52"
+    "@syncfusion/ej2-file-utils" "~19.4.52"
+    "@syncfusion/ej2-pdf-export" "~19.4.52"
+    "@syncfusion/ej2-svg-base" "~19.4.52"
+
+"@syncfusion/ej2-icons@~19.4.52":
+  version "19.4.52"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-icons/-/ej2-icons-19.4.52.tgz#f6d69a9829e21ee527d56f4fb5d1d15126f93351"
+  integrity sha512-hkEvuVA/soEdqFwFSGbj2Z9u6Ajb+4HZNYIKtw6aCwjn/FE5vFuGMFBdkLEX9BRkUl/e/uvyP6/TKBM/nfkY8A==
+
+"@syncfusion/ej2-pdf-export@~19.4.52":
+  version "19.4.52"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-pdf-export/-/ej2-pdf-export-19.4.52.tgz#f47b4eca4969e5ff28f2fd7c540f7fb1c2936e9b"
+  integrity sha512-j9iQuGwU4vzz8qo6McC/FNSuA7MbVFzZ0TBhi9n1qwJu3rpB5pO3kpUJ1jMS2U+5L38RGdR5ONvdJVqScEB0wA==
+  dependencies:
+    "@syncfusion/ej2-compression" "~19.4.52"
+
+"@syncfusion/ej2-svg-base@~19.4.52":
+  version "19.4.52"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-svg-base/-/ej2-svg-base-19.4.52.tgz#477390a60a816c356df854dc64424850a1d7c80e"
+  integrity sha512-6QJfUaprOBvvS/vybBwGSyJvlAyC1czvH7s7ZWkat/6GkQB1WUXkz4lpkbbOj/dwASMyaqHIFWSHFicorynBzg==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.52"
 
 "@tootallnate/once@2":
   version "2.0.0"
@@ -3212,6 +3291,11 @@ core-js-pure@^3.25.1:
   version "3.25.5"
   resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.25.5.tgz"
   integrity sha512-oml3M22pHM+igfWHDfdLVq2ShWmjM2V4L+dQEBs0DWVIqEm9WHCwGAlZ6BmyBQGy5sFrJmcx+856D9lVKyGWYg==
+
+core-js@^3.4.8:
+  version "3.26.0"
+  resolved "https://registry.npmjs.org/core-js/-/core-js-3.26.0.tgz"
+  integrity sha512-+DkDrhoR4Y0PxDz6rurahuB+I45OsEUv8E1maPTB6OuHRohMMcznBq9TMpdpDMm/hUPob/mJJS3PqgbHpMTQgw==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -7258,7 +7342,7 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
-reflect-metadata@^0.1.2:
+reflect-metadata@^0.1.2, reflect-metadata@^0.1.9:
   version "0.1.13"
   resolved "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.13.tgz"
   integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
@@ -7464,6 +7548,11 @@ run-parallel@^1.1.9:
   integrity sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==
   dependencies:
     queue-microtask "^1.2.2"
+
+rxjs-compat@^6.5.4:
+  version "6.6.7"
+  resolved "https://registry.npmjs.org/rxjs-compat/-/rxjs-compat-6.6.7.tgz"
+  integrity sha512-szN4fK+TqBPOFBcBcsR0g2cmTTUF/vaFEOZNuSdfU8/pGFnNmmn2u8SystYXG1QMrjOPBc6XTKHMVfENDf6hHw==
 
 rxjs-for-await@0.0.2:
   version "0.0.2"
@@ -8863,6 +8952,11 @@ yn@^3.0.0:
   version "3.1.1"
   resolved "https://registry.npmjs.org/yn/-/yn-3.1.1.tgz"
   integrity sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==
+
+zone.js@^0.10.2:
+  version "0.10.3"
+  resolved "https://registry.npmjs.org/zone.js/-/zone.js-0.10.3.tgz"
+  integrity sha512-LXVLVEq0NNOqK/fLJo3d0kfzd4sxwn2/h67/02pjCjfKDxgx1i9QqpvtHD8CrBnSSwMw5+dy11O7FRX5mkO7Cg==
 
 zone.js@~0.11.4:
   version "0.11.8"
