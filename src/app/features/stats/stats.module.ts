@@ -44,6 +44,6 @@ import {
     WeightTrackerComponent,
     WorkoutHeatmapComponent
   ],
-  providers: [HeatMapComponent, LegendService, TooltipService],
+  providers: [HeatMapComponent, LegendService, TooltipService,HeaderComponent],
 })
 export class StatsPageModule {}

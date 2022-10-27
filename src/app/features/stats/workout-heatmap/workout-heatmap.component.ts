@@ -35,7 +35,7 @@ export class WorkoutHeatmapComponent implements OnInit {
   public cellSettings: object = {
     border: {
       width: 1,
-      radius: 4,
+      // radius: 4,
       color: 'white',
     },
   };

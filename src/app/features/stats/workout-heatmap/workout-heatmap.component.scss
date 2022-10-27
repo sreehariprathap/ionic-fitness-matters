@@ -1,3 +1,18 @@
 ejs-heatmap {
   background-color: black;
 }
+#container_HeatmapBorder {
+  fill: #121212;
+}
+#containerYAxisLabels,
+#containerXAxisLabels,
+#container_Heatmap_LegendLabel {
+  text {
+    fill: white;
+  }
+}
+#container_Container_RectGroup {
+  rect {
+    margin: 2px;
+  }
+}
