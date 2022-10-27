@@ -31,4 +31,7 @@ export class CalorieService {
   getWeightHistory(params: any) {
     return this.http.post(`workouts/weight-history`, params);
   }
+  getWorkoutHeatMapData(params: any) {
+    return this.http.post(`workouts/workout-heatmap`, params);
+  }
 }
