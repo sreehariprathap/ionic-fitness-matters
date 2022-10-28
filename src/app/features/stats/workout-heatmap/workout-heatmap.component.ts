@@ -11,7 +11,7 @@ export class WorkoutHeatmapComponent implements OnInit {
   userId: number = +localStorage.getItem('user_id');
   monthData = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 0, 0,0,0,0,0
   ];
   // Data for heatmap
   dataSource: object[] = [];
@@ -22,13 +22,13 @@ export class WorkoutHeatmapComponent implements OnInit {
     labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
   };
   public paletteSettings: object = {
-    palette: [{ color: '#f1faee' }, { color: '#c7f9cc' }, { color: '#2ec4b6' }],
+    palette: [{ color: '#1f1f1f' }, { color: '#c7f9cc' }, { color: '#2ec4b6' }],
   };
   public cellSettings: object = {
     border: {
       width: 1,
       // radius: 4,
-      color: 'white',
+      color: '#1f1f1f',
     },
   };
 

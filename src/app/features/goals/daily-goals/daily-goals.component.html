@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="dailyGoals">
   <ion-card class="flex items-center justify-between p-2">
     <div class="flex items-center">
       <div class="m-3">
@@ -10,50 +10,82 @@
       <div>
         <ion-card-header>
           <ion-card-title>Daily Workout</ion-card-title>
-          <ion-card-subtitle>Burn 600 calories</ion-card-subtitle>
+          <ion-card-subtitle
+            >Burn {{ dailyGoals.burnGoal }} calories</ion-card-subtitle
+          >
         </ion-card-header>
       </div>
     </div>
     <div class="m-3">
-      <fa-icon [icon]="faCircleCheck" class="fa-2xl"></fa-icon>
+      <fa-icon
+        [icon]="faCircleCheck"
+        class="fa-2xl"
+        [ngClass]="{ 'text-green-700': dailyGoals.burnGoalStatus }"
+      ></fa-icon>
     </div>
   </ion-card>
   <ion-card class="flex items-center justify-between p-2">
     <div class="flex items-center">
       <div class="m-3">
-        <fa-icon
-          [icon]="faBurger"
-          class="text-green-700 fa-2xl"
-        ></fa-icon>
+        <fa-icon [icon]="faBurger" class="text-green-700 fa-2xl"></fa-icon>
       </div>
       <div>
         <ion-card-header>
           <ion-card-title>Daily Food</ion-card-title>
-          <ion-card-subtitle>Eat 1600 calories</ion-card-subtitle>
+          <ion-card-subtitle
+            >Eat {{ dailyGoals.inTakeGoal }} calories</ion-card-subtitle
+          >
         </ion-card-header>
       </div>
     </div>
     <div class="m-3">
-      <fa-icon [icon]="faCircleCheck" class="fa-2xl"></fa-icon>
+      <fa-icon
+        [icon]="faCircleCheck"
+        class="fa-2xl"
+        [ngClass]="{ 'text-green-700': dailyGoals.inTakeGoalStatus }"
+      ></fa-icon>
     </div>
   </ion-card>
   <ion-card class="flex items-center justify-between p-2">
     <div class="flex items-center">
       <div class="m-3">
-        <fa-icon
-          [icon]="faGlassWater"
-          class="text-cyan-700 fa-2xl"
-        ></fa-icon>
+        <fa-icon [icon]="faGlassWater" class="text-cyan-700 fa-2xl"></fa-icon>
       </div>
       <div>
         <ion-card-header>
           <ion-card-title>Daily Water intake</ion-card-title>
-          <ion-card-subtitle>Drink 6 bottles of water</ion-card-subtitle>
+          <ion-card-subtitle
+            >Drink {{ dailyGoals.waterGoal }} bottles of
+            water</ion-card-subtitle
+          >
         </ion-card-header>
       </div>
     </div>
+    <div class="flex gap-2 items-center">
+      <div class="flex justify-center items-center">
+        <button
+          (click)="changeWaterStatus('subtract')"
+          class="p-3 bg-slate-200 shadow-md text-lg rounded-full w-10 h-10 flex justify-center items-center"
+        >
+          <span>-</span>
+        </button>
+      </div>
+      <div class="mx-5">{{ dailyGoals.waterCount }}</div>
+      <div class="flex justify-center items-center">
+        <button
+          (click)="changeWaterStatus('add')"
+          class="p-3 bg-slate-200 shadow-md text-lg rounded-full w-10 h-10 flex justify-center items-center"
+        >
+          <span>+</span>
+        </button>
+      </div>
+    </div>
     <div class="m-3">
-      <fa-icon [icon]="faCircleCheck" class="fa-2xl"></fa-icon>
+      <fa-icon
+        [icon]="faCircleCheck"
+        class="fa-2xl"
+        [ngClass]="{ 'text-green-700': dailyGoals.waterGoalStatus }"
+      ></fa-icon>
     </div>
   </ion-card>
 </div>

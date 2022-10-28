@@ -20,13 +20,13 @@ export class WeightTrackerComponent implements OnInit {
   yMax;
   weight = 0;
 
-  constructor(private readonly calorieService: CalorieService) {
-    this.getWeightHistory();
-  }
+  constructor(private readonly calorieService: CalorieService) {}
 
   ngOnInit() {
+    this.getWeightHistory();
     this.weightSubject.subscribe((e) => {
       this.getWeightHistory();
+      console.log('hello');
     });
 
     const dataShadow = [];

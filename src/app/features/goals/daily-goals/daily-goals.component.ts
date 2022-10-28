@@ -5,6 +5,7 @@ import {
   faBurger,
   faGlassWater,
 } from '@fortawesome/free-solid-svg-icons';
+import { GoalService } from 'src/app/core/services/goal.service';
 
 @Component({
   selector: 'app-daily-goals',
@@ -16,7 +17,29 @@ export class DailyGoalsComponent implements OnInit {
   faPersonWalking = faPersonWalking;
   faBurger = faBurger;
   faGlassWater = faGlassWater;
-  constructor() {}
+  userId: number = +localStorage.getItem('user_id');
+  dailyGoals;
 
-  ngOnInit() {}
+  constructor(private readonly goalsService: GoalService) {}
+
+  ngOnInit() {
+    this.getDailyGoals();
+  }
+
+  getDailyGoals() {
+    this.goalsService
+      .getDailyGoals({ id: +this.userId })
+      .subscribe((data: any) => {
+        this.dailyGoals = data.goal[0];
+        console.log(this.dailyGoals);
+      });
+  }
+  changeWaterStatus(args: string) {
+    this.goalsService
+      .updateWater({ id: this.dailyGoals.id, action: args })
+      .subscribe((data) => {
+        console.log(data);
+        this.getDailyGoals();
+      });
+  }
 }

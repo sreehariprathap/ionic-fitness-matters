@@ -18,4 +18,12 @@ export class GoalService {
   changeStatus(params: any) {
     return this.http.patch('goals/change-Status', params);
   }
+
+  getDailyGoals(params: any) {
+    return this.http.post('goals/daily-goals', params);
+  }
+
+  updateWater(params: any) {
+    return this.http.patch('goals/add-water', params);
+  }
 }

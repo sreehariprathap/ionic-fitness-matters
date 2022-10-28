@@ -1,13 +1,15 @@
 <div>
-  <h2 class="text-center">Weight tracker graph</h2>
+<div class="p-2">
   <div
-    echarts
-    [options]="options"
-    class="demo-chart"
-    (chartInit)="onChartEvent($event, 'chartInit')"
-    (chartClick)="onChartEvent($event, 'chartClick')"
-    (chartMouseOut)="onChartEvent($event, 'chartMouseOut')"
-  ></div>
+  echarts
+  [options]="options"
+  class="demo-chart"
+  (chartInit)="onChartEvent($event, 'chartInit')"
+  (chartClick)="onChartEvent($event, 'chartClick')"
+  (chartMouseOut)="onChartEvent($event, 'chartMouseOut')"
+></div>
+</div>
+  <h2 class="text-center mb-5">Weight tracker graph</h2>
   <h2 class="text-center text-2xl" *ngIf="weight === 0 ? false : true">
     Weight : {{ weight }} kg
   </h2>
