@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { ActionSheetController } from '@ionic/angular';
+import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-user',
   templateUrl: './user.page.html',
@@ -12,6 +13,7 @@ export class UserPage implements OnInit {
   userData: any;
   fitnessData: any;
   result: string;
+  faCircleInfo = faCircleInfo;
 
   constructor(
     private readonly userService: UserService,

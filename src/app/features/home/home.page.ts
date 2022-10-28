@@ -49,7 +49,6 @@ export class HomePage implements OnInit {
 
   addFood() {
     this.calorieService.addFood(this.foodForm.value).subscribe((data) => {
-      console.log(data);
       this.toast.success('food added successfully');
       this.foodModal.dismiss();
       this.foodSubject.next(1);

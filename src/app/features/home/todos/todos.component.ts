@@ -10,6 +10,7 @@ import { TodoService } from 'src/app/core/services/todo.service';
 export class TodosComponent implements OnInit {
   @Input('todoSubject') todoSubject: Subject<any>;
   todos: any[];
+  userId = localStorage.getItem('user_id');
 
   constructor(private readonly todoService: TodoService) {}
 
@@ -21,9 +22,8 @@ export class TodosComponent implements OnInit {
   }
 
   getTodosForToday() {
-    const userId = localStorage.getItem('user_id');
     this.todoService
-      .getTodosForToday({ id: +userId })
+      .getTodosForToday({ id: +this.userId })
       .subscribe((data: any) => {
         this.todos = data.todasTodos.filter((datum) => datum.status);
       });

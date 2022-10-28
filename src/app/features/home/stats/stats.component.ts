@@ -53,7 +53,6 @@ export class StatsComponent implements OnInit {
           (this.caloriesConsumed / (this.bmr + this.caloriesBurned)) *
           100
         ).toFixed(2);
-        console.log('calorieBurn percent', this.calorieBurnPercent);
       });
   }
 }

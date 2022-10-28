@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { CalorieService } from 'src/app/core/services/calorie.service';
 
 import LinearGradient from 'zrender/lib/graphic/LinearGradient';
@@ -9,6 +10,8 @@ import LinearGradient from 'zrender/lib/graphic/LinearGradient';
   styleUrls: ['./weight-tracker.component.scss'],
 })
 export class WeightTrackerComponent implements OnInit {
+  @Input('weightSubject') weightSubject: Subject<any>;
+
   options: any;
   weightHistory: any;
   userId: number = +localStorage.getItem('user_id');
@@ -22,8 +25,11 @@ export class WeightTrackerComponent implements OnInit {
   }
 
   ngOnInit() {
-    const dataShadow = [];
+    this.weightSubject.subscribe((e) => {
+      this.getWeightHistory();
+    });
 
+    const dataShadow = [];
     // tslint:disable-next-line: prefer-for-of
     // eslint-disable-next-line @typescript-eslint/prefer-for-of
     for (let i = 0; i < this.data.length; i++) {

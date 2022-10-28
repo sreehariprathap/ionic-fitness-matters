@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { IonModal } from '@ionic/angular';
 import { HotToastService } from '@ngneat/hot-toast';
 import { CalorieService } from 'src/app/core/services/calorie.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-stats',
@@ -13,6 +14,8 @@ export class StatsPage implements OnInit {
   @ViewChild(IonModal) modal: IonModal;
   weightTrackerForm: FormGroup;
   userId: number = +localStorage.getItem('user_id');
+
+  weightSubject: Subject<any> = new Subject();
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -36,6 +39,7 @@ export class StatsPage implements OnInit {
       .addWeight(this.weightTrackerForm.value)
       .subscribe((data) => {
         this.toast.success('weight added successfully');
+        this.weightSubject.next(1);
         this.modal.dismiss();
       });
   }

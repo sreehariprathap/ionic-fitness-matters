@@ -25,7 +25,6 @@ export class TokenInterceptor implements HttpInterceptor {
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
-    console.log('caught');
     this.totalRequests++;
     this.loadingService.setLoading(true);
 
