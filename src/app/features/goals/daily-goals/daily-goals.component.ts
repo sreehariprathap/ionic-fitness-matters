@@ -41,14 +41,12 @@ export class DailyGoalsComponent implements OnInit {
       .getDailyGoals({ id: +this.userId })
       .subscribe((data: any) => {
         this.dailyGoals = data.goal[0];
-        console.log(this.dailyGoals);
       });
   }
   changeWaterStatus(args: string) {
     this.goalsService
       .updateWater({ id: this.dailyGoals.id, action: args })
       .subscribe((data) => {
-        console.log(data);
         this.getDailyGoals();
       });
   }
@@ -57,9 +55,28 @@ export class DailyGoalsComponent implements OnInit {
     this.calorieService
       .caloriesConsumedToday({ id: +this.userId })
       .subscribe((data: any) => {
-        this.calorieProgress =
-          (+data.consumedCalories / +this.dailyGoals.burnGoal) * 100;
-        console.log(this.calorieProgress);
+        if (
+          +(
+            (+data.consumedCalories / +this.dailyGoals.inTakeGoal) *
+            100
+          ).toFixed() >= 100
+        ) {
+          this.foodIntakeProgress = 100;
+          this.goalsService
+            .updateDailyGoalStatus({
+              id: +this.dailyGoals.id,
+              action: 'intakeGoal',
+            })
+            .subscribe((goalData: any) => {
+              this.getDailyGoals();
+            });
+        } else {
+          this.foodIntakeProgress = +(
+            (+data.consumedCalories / +this.dailyGoals.inTakeGoal) *
+            100
+          ).toFixed();
+          this.getDailyGoals();
+        }
       });
   }
 
@@ -67,10 +84,27 @@ export class DailyGoalsComponent implements OnInit {
     this.calorieService
       .caloriesBurnedToday({ id: +this.userId })
       .subscribe((data: any) => {
-        this.foodIntakeProgress =
-          (+data.burnedCalories / +this.dailyGoals.inTakeGoal) * 100;
-
-        console.log(this.foodIntakeProgress);
+        if (
+          +(
+            (+data.burnedCalories / +this.dailyGoals.burnGoal) *
+            100
+          ).toFixed() >= 100
+        ) {
+          this.calorieProgress = 100;
+          this.goalsService
+            .updateDailyGoalStatus({
+              id: +this.dailyGoals.id,
+              action: 'workoutGoal',
+            })
+            .subscribe((goalData: any) => {
+              this.getDailyGoals();
+            });
+        } else {
+          this.calorieProgress = +(
+            (+data.burnedCalories / +this.dailyGoals.burnGoal) *
+            100
+          ).toFixed();
+        }
       });
   }
 }

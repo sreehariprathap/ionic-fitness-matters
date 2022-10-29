@@ -22,8 +22,8 @@ import { ProgressBarModule } from '@syncfusion/ej2-angular-progressbar';
     ReactiveFormsModule,
     FontAwesomeModule,
     GoalsPageRoutingModule,
-    ProgressBarModule
+    ProgressBarModule,
   ],
-  declarations: [ GoalsPage, DailyGoalsComponent,HeaderComponent],
+  declarations: [GoalsPage, DailyGoalsComponent, HeaderComponent],
 })
 export class GoalsPageModule {}

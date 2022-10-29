@@ -26,4 +26,8 @@ export class GoalService {
   updateWater(params: any) {
     return this.http.patch('goals/add-water', params);
   }
+
+  updateDailyGoalStatus(params: any) {
+    return this.http.patch('goals/daily-goals/change-Status', params);
+  }
 }
