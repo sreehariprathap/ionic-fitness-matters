@@ -10,6 +10,7 @@ import LinearGradient from 'zrender/lib/graphic/LinearGradient';
   styleUrls: ['./weight-tracker.component.scss'],
 })
 export class WeightTrackerComponent implements OnInit {
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('weightSubject') weightSubject: Subject<any>;
 
   options: any;
@@ -83,9 +84,9 @@ export class WeightTrackerComponent implements OnInit {
           type: 'bar',
           itemStyle: {
             color: new LinearGradient(0, 0, 0, 1, [
-              { offset: 0, color: '#83bff6' },
-              { offset: 0.5, color: '#188df0' },
-              { offset: 1, color: '#188df0' },
+              { offset: 0, color: '#ffccd5' },
+              { offset: 0.5, color: '#ff499e' },
+              { offset: 1, color: '#FF006E' },
             ]),
           },
           emphasis: {

@@ -1855,6 +1855,15 @@
     "@syncfusion/ej2-base" "~19.4.52"
     "@syncfusion/ej2-heatmap" "19.4.52"
 
+"@syncfusion/ej2-angular-progressbar@19":
+  version "19.4.55"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-angular-progressbar/-/ej2-angular-progressbar-19.4.55.tgz#109398f010fb25770360907277bbef62a697afb2"
+  integrity sha512-gpfK7G6fsWet41pHztew90tq/T4C69111qbqLLktrcSiqu5hkEmStM+K13/khtPBNcy0FccdNBCaKmjE09hq4g==
+  dependencies:
+    "@syncfusion/ej2-angular-base" "~19.4.52"
+    "@syncfusion/ej2-base" "~19.4.52"
+    "@syncfusion/ej2-progressbar" "19.4.55"
+
 "@syncfusion/ej2-base@~19.4.52":
   version "19.4.52"
   resolved "https://registry.yarnpkg.com/@syncfusion/ej2-base/-/ej2-base-19.4.52.tgz#9fa0d3de351a82c99f423491f64d09c40fdea520"
@@ -1869,7 +1878,7 @@
   dependencies:
     "@syncfusion/ej2-file-utils" "~19.4.52"
 
-"@syncfusion/ej2-data@~19.4.52":
+"@syncfusion/ej2-data@~19.4.52", "@syncfusion/ej2-data@~19.4.54":
   version "19.4.54"
   resolved "https://registry.yarnpkg.com/@syncfusion/ej2-data/-/ej2-data-19.4.54.tgz#d6d02b113898ac5d2683270986adf49c08100f3d"
   integrity sha512-btJDjKepcaVGtNqVoblhYFhx4sAW1ju+Nq1CBPn4kO0AtRPBQ3Gi47uQgsstkxNMDrv+UG1hNi7PhHpPNOtwUQ==
@@ -1904,6 +1913,15 @@
   integrity sha512-j9iQuGwU4vzz8qo6McC/FNSuA7MbVFzZ0TBhi9n1qwJu3rpB5pO3kpUJ1jMS2U+5L38RGdR5ONvdJVqScEB0wA==
   dependencies:
     "@syncfusion/ej2-compression" "~19.4.52"
+
+"@syncfusion/ej2-progressbar@19.4.55":
+  version "19.4.55"
+  resolved "https://registry.yarnpkg.com/@syncfusion/ej2-progressbar/-/ej2-progressbar-19.4.55.tgz#26f902be50f4c386bd4c72d1464c784a92357c88"
+  integrity sha512-+SBrL4iAyncUQY8wzzifMrQ2CGkiv8DeBoZdf9K5ispfLJlBJM+cfUAJvhnBZ1sVUjDQcO8DEL21AWIcfZQdfg==
+  dependencies:
+    "@syncfusion/ej2-base" "~19.4.52"
+    "@syncfusion/ej2-data" "~19.4.54"
+    "@syncfusion/ej2-svg-base" "~19.4.52"
 
 "@syncfusion/ej2-svg-base@~19.4.52":
   version "19.4.52"

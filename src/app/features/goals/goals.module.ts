@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ExploreContainerComponentModule } from 'src/app/explore-container/explore-container.module';
 import { HeaderComponent } from 'src/app/core/components/header/header.component';
 import { DailyGoalsComponent } from './daily-goals/daily-goals.component';
+import { ProgressBarModule } from '@syncfusion/ej2-angular-progressbar';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { DailyGoalsComponent } from './daily-goals/daily-goals.component';
     ExploreContainerComponentModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    GoalsPageRoutingModule
+    GoalsPageRoutingModule,
+    ProgressBarModule
   ],
   declarations: [ GoalsPage, DailyGoalsComponent,HeaderComponent],
 })

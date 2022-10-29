@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/no-input-rename */
 import { Component, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { skip } from 'rxjs/operators';

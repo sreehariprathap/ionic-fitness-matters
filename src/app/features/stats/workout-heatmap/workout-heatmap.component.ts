@@ -22,7 +22,7 @@ export class WorkoutHeatmapComponent implements OnInit {
     labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
   };
   public paletteSettings: object = {
-    palette: [{ color: '#1f1f1f' }, { color: '#c7f9cc' }, { color: '#2ec4b6' }],
+    palette: [{ color: '#1f1f1f' }, { color: '#ff499e' }, { color: '#FF006E' }],
   };
   public cellSettings: object = {
     border: {

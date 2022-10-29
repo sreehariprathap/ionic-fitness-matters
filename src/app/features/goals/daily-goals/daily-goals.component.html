@@ -16,12 +16,29 @@
         </ion-card-header>
       </div>
     </div>
-    <div class="m-3">
-      <fa-icon
-        [icon]="faCircleCheck"
-        class="fa-2xl"
-        [ngClass]="{ 'text-green-700': dailyGoals.burnGoalStatus }"
-      ></fa-icon>
+    <div class="flex justify-center items-center gap-2">
+      <div>
+        <ejs-progressbar
+          id="percentage"
+          type="Linear"
+          height="60"
+          trackThickness="24"
+          progressThickness="24"
+          progressColor="#E3165B"
+          trackColor="#F8C7D8"
+          [value]="calorieProgress"
+          [animation]="animation"
+          [showProgressValue]="true"
+        >
+        </ejs-progressbar>
+      </div>
+      <div class="m-3">
+        <fa-icon
+          [icon]="faCircleCheck"
+          class="fa-2xl"
+          [ngClass]="{ 'text-green-700': dailyGoals.burnGoalStatus }"
+        ></fa-icon>
+      </div>
     </div>
   </ion-card>
   <ion-card class="flex items-center justify-between p-2">
@@ -38,12 +55,29 @@
         </ion-card-header>
       </div>
     </div>
-    <div class="m-3">
-      <fa-icon
-        [icon]="faCircleCheck"
-        class="fa-2xl"
-        [ngClass]="{ 'text-green-700': dailyGoals.inTakeGoalStatus }"
-      ></fa-icon>
+    <div class="flex justify-center items-center gap-2">
+      <div>
+        <ejs-progressbar
+          id="percentage2"
+          type="Linear"
+          height="60"
+          trackThickness="24"
+          progressThickness="24"
+          progressColor="#E3165B"
+          trackColor="#F8C7D8"
+          [showProgressValue]="true"
+          [value]="foodIntakeProgress"
+          [animation]="animation"
+        >
+        </ejs-progressbar>
+      </div>
+      <div class="m-3">
+        <fa-icon
+          [icon]="faCircleCheck"
+          class="fa-2xl"
+          [ngClass]="{ 'text-green-700': dailyGoals.inTakeGoalStatus }"
+        ></fa-icon>
+      </div>
     </div>
   </ion-card>
   <ion-card class="flex items-center justify-between p-2">
@@ -61,31 +95,33 @@
         </ion-card-header>
       </div>
     </div>
-    <div class="flex gap-2 items-center">
-      <div class="flex justify-center items-center">
-        <button
-          (click)="changeWaterStatus('subtract')"
-          class="p-3 bg-slate-200 shadow-md text-lg rounded-full w-10 h-10 flex justify-center items-center"
-        >
-          <span>-</span>
-        </button>
+    <div class="flex justify-center items-center gap-2">
+      <div class="flex gap-2 items-center">
+        <div class="flex justify-center items-center">
+          <button
+            (click)="changeWaterStatus('subtract')"
+            class="p-3 bg-slate-200 shadow-md text-lg rounded-full w-10 h-10 flex justify-center items-center"
+          >
+            <span>-</span>
+          </button>
+        </div>
+        <div class="mx-5">{{ dailyGoals.waterCount }}</div>
+        <div class="flex justify-center items-center">
+          <button
+            (click)="changeWaterStatus('add')"
+            class="p-3 bg-slate-200 shadow-md text-lg rounded-full w-10 h-10 flex justify-center items-center"
+          >
+            <span>+</span>
+          </button>
+        </div>
       </div>
-      <div class="mx-5">{{ dailyGoals.waterCount }}</div>
-      <div class="flex justify-center items-center">
-        <button
-          (click)="changeWaterStatus('add')"
-          class="p-3 bg-slate-200 shadow-md text-lg rounded-full w-10 h-10 flex justify-center items-center"
-        >
-          <span>+</span>
-        </button>
+      <div class="m-3">
+        <fa-icon
+          [icon]="faCircleCheck"
+          class="fa-2xl"
+          [ngClass]="{ 'text-green-700': dailyGoals.waterGoalStatus }"
+        ></fa-icon>
       </div>
-    </div>
-    <div class="m-3">
-      <fa-icon
-        [icon]="faCircleCheck"
-        class="fa-2xl"
-        [ngClass]="{ 'text-green-700': dailyGoals.waterGoalStatus }"
-      ></fa-icon>
     </div>
   </ion-card>
 </div>
